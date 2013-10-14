@@ -1,0 +1,22 @@
+<article class='Post'>
+  <header>
+    <h1 t:bind='post.title' />
+    <p t:bind='post:date' />
+  </header>
+  <div t:bind='post.body' t:format='markdown' />
+
+  <section class='.comments'>
+    <header>Comments</header>
+    
+    <div t:repeat='comments'>
+      <header>
+        <strong t:bind='.name' /> says
+        <span t:bind=':date' />
+      </header>
+      <div t:bind='.body' t:format='markdown' />
+    </div>
+
+  </section>
+
+</article>
+

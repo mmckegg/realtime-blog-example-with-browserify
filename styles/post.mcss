@@ -1,0 +1,65 @@
+Post {
+
+  -index {
+    padding-bottom: 30px
+    border-bottom: 1px solid silver
+    margin-bottom: 20px
+
+  }
+
+  header {
+    border-radius: 10px
+    padding: 4px 10px
+    background: #CCC
+    position: relative
+    h1 {
+      font-size: 170%
+    }
+    p {
+      position:absolute
+      right:10px
+      top: 10px
+      color: gray
+    }
+    margin-bottom: 1em
+  }
+
+  div {
+    padding: 4px 10px
+    margin: 0.5em 0
+
+    (p) {
+      margin: 1em 0
+    }
+  }
+
+  section.comments {
+    border: 1px solid silver
+    border-radius: 10px 
+    background: white
+    margin: 1em 0
+    padding: 20px
+    header {
+      font-size: 120%
+      font-weight: bold
+      margin-bottom: 1em
+    }
+
+    div {
+      border-top: 1px solid silver
+      margin-bottom: 5px
+      header {
+        padding: 4px 10px
+        background: #DDD
+        span {
+          float: right
+          color: gray
+          font-size: 90%
+        }
+      }
+      div {
+        padding: 10px
+      }
+    }
+  }
+}

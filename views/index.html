@@ -1,0 +1,12 @@
+<article t:repeat='posts' class='Post -index'>
+
+  <header>
+    <h1><a t:bind:href=':url' t:bind='.title' /></h1>
+    <p t:bind=':date' />
+  </header>
+
+  <div t:bind='.body' t:format='markdown' />
+
+  <a t:bind:href=':url'>View Comments and Full Post...</a>
+
+</article>

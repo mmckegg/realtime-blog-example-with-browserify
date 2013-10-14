@@ -1,0 +1,36 @@
+{
+  "name": "realtime-blog-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor -e js,html,json server.js",
+    "install": "node database/default-data.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmckegg/blog-example.git"
+  },
+  "dependencies": {
+    "context-server": "*",
+    "contextdb": "*",
+    "rincewind": "*",
+    "routes-router": "*",
+    "browserify": "*",
+    "level": "*",
+    "strftime": "*",
+    "brfs": "*",
+    "become": "*",
+    "micro-css": "*",
+    "tree-query": "*",
+    "supervisor": "*",
+    "marked": "~0.2.9"
+  },
+  "private": true,
+  "author": "Matt McKegg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmckegg/blog-example/issues"
+  }
+}
