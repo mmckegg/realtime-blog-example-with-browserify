@@ -1,22 +1,27 @@
-<article class='Post'>
+<article class='Post' data-preserve-attribute='style'>
   <header>
     <h1 t:bind='post.title' />
     <p t:bind='post:date' />
+    <menu type='list'>
+      <button data-behavior='post/edit'>Edit</button>
+    </menu>
   </header>
   <div t:bind='post.body' t:format='markdown' />
 
-  <section class='.comments'>
-    <header>Comments</header>
-    
-    <div t:repeat='comments'>
-      <header>
-        <strong t:bind='.name' /> says
-        <span t:bind=':date' />
-      </header>
-      <div t:bind='.body' t:format='markdown' />
-    </div>
-
-  </section>
-
 </article>
 
+<aside class='Comments'>
+  <header>Comments</header>
+  
+  <div t:repeat='comments' data-preserve-attribute='style'>
+    <header>
+      <h1><strong t:bind='.name' /> says</h1>
+      <span t:bind='.created_at:date' />
+      <menu type='list'>
+        <button data-behavior='comment/edit' t:bind:data-query=':query'>Edit</button>
+      </menu>
+    </header>
+    <div t:bind='.body' t:format='markdown' />
+  </div>
+
+</aside>

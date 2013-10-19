@@ -1,17 +1,17 @@
-var Template = require('rincewind')
+var View = require('rincewind')
 var fs = require('fs')
 
 var formatters = require('./formatters')
 
-var master = Template(fs.readFileSync(__dirname + '/master.html', 'utf8'), 'master')
+var master = View(fs.readFileSync(__dirname + '/master.html', 'utf8'), 'master')
 
 var views = {
-  'index': Template(fs.readFileSync(__dirname + '/index.html', 'utf8'), {
+  'index': View(fs.readFileSync(__dirname + '/index.html', 'utf8'), {
     name: 'index',
     master: master
   }),
 
-  'post': Template(fs.readFileSync(__dirname + '/post.html', 'utf8'), {
+  'post': View(fs.readFileSync(__dirname + '/post.html', 'utf8'), {
     name: 'post',
     master: master
   })
@@ -23,8 +23,7 @@ module.exports = function(datasource){
     return datasource.get(query, templateContext.source, templateContext)
   }
 
-  var result = views[datasource.data.view](getter)
-
-  return views[datasource.data.view](getter, {formatters: formatters})
+  var result = views[datasource.data.view](getter, {formatters: formatters})
+  return result
 }
 

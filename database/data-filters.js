@@ -21,5 +21,11 @@ module.exports = {
 
       return strftime('%d %B %Y at %l:%M%P', input)
     }
+  },
+
+  query: function(input, params){
+    if (input && input.type == 'comment'){
+      return 'comments[id=' + input.id + ']'
+    }
   }
 }
