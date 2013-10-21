@@ -18,7 +18,8 @@ window.context = getContext(token, {endpoint: '/contexts', dataFilters: dataFilt
 var behave = addBehaviors(document)
 
 // re-render page clientside when there is a change
-window.context.on('change', function(){
+window.context.on('change', function(object){
+  console.log('changed!', object)
   become(document, render(window.context), {
     onChange: behave
   })
