@@ -4,7 +4,8 @@ var Router = require('routes-router')
 
 var db = require('./database')
 
-var respondCss = require('./styles'), render = require('./views')
+var respondCss = require('./styles')
+var render = require('./views')
 
 var router = Router()
 var server = http.createServer(router)
