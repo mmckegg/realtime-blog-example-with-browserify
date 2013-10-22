@@ -23,13 +23,35 @@ $ npm start
 
 Navigate to https://localhost:9876
 
+## My node journey. 
+
+Came for websockets and shared code, but it was node modules that got me hooked. 
+
+```
+var thing = require('./thing')
+// IT'S SO COOL
+```
+
+No more silly file <-> module mapping and global variables. No more faux-private underscore functions! 
+
+I can build tiny machines that all feed into each other. 
+
+When every part can stand alone, no longer have to keep the entire project in my head. Just remember the inputs and outputs of each part. 
+
+I want this in the browser!
+
+I tried a couple of projects before I came across Browserify. But it was browserify that stuck. 
+
+Writing apps with browserify is exactly the same as writing server. You have require and you have NPM. Also most of the node apis are included with browserify so most NPM packages just work. Almost every node.js API now has an equivalent browser API. The browser even has a FileSystem API now. 
+
+
 ## Modules Used in Presentation
 
 - [**browserify**](https://github.com/substack/node-browserify) bundles Node code up for the browser
 - [**context-server**](https://github.com/mmckegg/context-server) streams changes between server and browser
 - [**brfs**](https://github.com/substack/brfs) transforms `fs.readFileSync` to inline
 - [**become**](https://github.com/mmckegg/become) provides partial page updates
-- [**dom-behavior**](https://github.com/mmckegg/dom-beavior) allows us to hook DOM events
+- [**dom-behavior**](https://github.com/mmckegg/dom-behavior) allows us to hook DOM events
 - [**former**](https://github.com/mmckegg/former) populates form elements and gets changes
 - [**dom-morph**](https://github.com/mmckegg/dom-morph) animates between two DOM elements
 
@@ -95,9 +117,10 @@ Let's get the token to the user:
  </body>
 ```
 
-Now in our browser.js:
+Since we can now run any of our server code in the browser, we could use the same code we used to render our page initially (/views/index.js) but in the browser.
 
 ```js
+// browser.js
 var getContext = require('context-server/connect')
 var token = document.body.getAttribute('data-token')
 
@@ -115,7 +138,7 @@ window.context.on('change', function(object){
 })
 ```
 
-And we'll add an edit button on posts:
+And to finish things off, we made the site editable.
 
 ```html
 <!--/views/post.html-->
