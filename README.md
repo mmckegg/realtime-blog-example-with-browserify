@@ -44,6 +44,8 @@ I tried a couple of projects before I came across Browserify. But it was browser
 
 Writing apps with browserify is exactly the same as writing server. You have require and you have NPM. Also most of the node apis are included with browserify so most NPM packages just work. Almost every node.js API now has an equivalent browser API. The browser even has a FileSystem API now. 
 
+[View My crappy slides](https://rawgithub.com/mmckegg/realtime-blog-example-with-browserify/master/slides.html) if you want.
+
 
 ## Modules Used in Presentation
 
